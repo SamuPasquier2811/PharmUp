@@ -30,7 +30,7 @@ export default function Login() {
     return (
         <div className="auth-container">
             <div className="auth-card">
-                <h1 className="brand">FarmUp</h1>
+                <h1 className="brand">PharmUp</h1>
                 <h2>Iniciar sesión</h2>
 
                 <form onSubmit={handleSubmit}>

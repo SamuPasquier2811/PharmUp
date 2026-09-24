@@ -57,7 +57,7 @@ export default function Register() {
     return (
         <div className="auth-container">
             <div className="auth-card">
-                <h1 className="brand">FarmUp</h1>
+                <h1 className="brand">PharmUp</h1>
                 <h2>Crear cuenta</h2>
 
                 <form onSubmit={handleSubmit}>
