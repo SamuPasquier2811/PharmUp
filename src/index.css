@@ -1128,3 +1128,52 @@ html, body {
   .filters-wrapper { padding: 0.75rem 1rem; }
   .summary-value { font-size: 1.15rem; }
 }
+
+/* ============ SAFE AREA (móvil/APK) ============ */
+
+/* Aplica padding arriba/abajo/izq/der según el dispositivo */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Topbar: añade espacio seguro arriba */
+.topbar {
+  padding-top: calc(0.85rem + env(safe-area-inset-top));
+}
+
+/* Auth: centra bien el login en APK */
+.auth-container {
+  min-height: 100vh;
+  min-height: 100dvh; /* mejor en móvil: usa altura dinámica */
+  padding-top: calc(1rem + env(safe-area-inset-top));
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
+/* Buscador sticky: respeta el topbar */
+.search-wrapper {
+  top: calc(env(safe-area-inset-top));
+}
+
+/* Modal: espacio arriba y abajo */
+.modal-content {
+  max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
+
+/* Botón flotante del carrito: sube por la barra de gestos */
+.cart-fab {
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+}
+
+/* Toast: no choque con el notch */
+.toaster {
+  top: calc(1rem + env(safe-area-inset-top));
+}
+
+/* Página general: asegura área segura abajo */
+.page {
+  padding-bottom: env(safe-area-inset-bottom);
+}
